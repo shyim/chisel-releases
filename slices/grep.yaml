@@ -1,0 +1,12 @@
+package: grep
+
+slices:
+  bins:
+    essential:
+      - libc6_libs
+      - libpcre2-8-0_libs
+    contents:
+      /bin/egrep:
+      /bin/fgrep:
+      /bin/grep:
+      /usr/bin/rgrep:
