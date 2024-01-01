@@ -12,5 +12,6 @@ slices:
       - libssl3_libs
       - nginx-common_config
       - zlib1g_libs
+      - base-passwd_data
     contents:
       /usr/sbin/nginx:
