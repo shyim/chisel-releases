@@ -6,8 +6,10 @@ slices:
   # handled differently in Chisel.
   # There's also no need (yet) for any init- and systemd-related files.
   config:
-    contents:
-      /etc/logrotate.d/nginx:
+    # adds required /run directory
+    essential:
+      - base-files_var
+    contents: 
       /etc/nginx/fastcgi.conf:
       /etc/nginx/fastcgi_params:
       /etc/nginx/koi-utf:
@@ -28,6 +30,10 @@ slices:
       /etc/nginx/sites-enabled/default: {symlink: /etc/nginx/sites-available/default}
       /var/www/html/: {make: true}
       /var/lib/nginx/: {make: true}
+
+  logrotate:
+    contents:
+      /etc/logrotate.d/nginx:
 
   ufw-config:
     contents:
